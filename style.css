@@ -2,24 +2,81 @@
 
 @import url("https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap");
 
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-    overflow-x: hidden;
+    overflow: hidden;
     font-family: "Work Sans", sans-serif;
 }
 
-a {
-    text-decoration: none;
+[data-theme="dark"] {
+    --sun: block;
+    --moon: none;
+    --mode-color: #eee;
+    --background-color: #121212;
+    --text-color: #d7d7d7;
+    --link-color: #d7d7d7;
+    --heading_1_color: #f2f2f2;
+    --cursor-color: #fff;
+}
+
+[data-theme="light"] {
+    --sun: none;
+    --moon: block;
+    --heading_1_color: #121112;
+    --text-color: #333;
+    --link-color: #333;
+    --mode-color: #121212;
+    --cursor-color: #000;
 }
 
 html {
-    background: #fff;
+    background-color: var(--background-color);
 }
 
 body {
     padding: 0 16px;
+    transition: background cubic-bezier(0.49, 0.11, 0.6, 1) 1.5s;
+}
+
+.theme_switch {
+    cursor: pointer;
+}
+
+.sun,
+.moon {
+    fill: var(--mode-color);
+    width: 24px;
+    stroke: none;
+    cursor: pointer;
+}
+
+.sun {
+    display: var(--sun);
+}
+
+.moon {
+    display: var(--moon);
+}
+
+#theme {
+    display: none;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+a {
+    text-decoration: none;
 }
 
 .container {
@@ -34,8 +91,14 @@ nav {
 .logo {
     font-size: 1rem;
     font-weight: 500;
-    color: #121112;
+    color: var(--heading_1_color);
     font-weight: 500;
+}
+
+.dark_light_logo {
+    padding: 8px 0;
+    border: none;
+    background: none;
 }
 
 .hero {
@@ -44,7 +107,7 @@ nav {
 
 .hero_text_p,
 h1 {
-    color: #333;
+    color: var(--heading_1_color);
 }
 
 h1 {
@@ -57,6 +120,7 @@ h1 {
     margin: 20px 0;
     font-size: 1rem;
     font-weight: 400;
+    color: var(--text-color);
     line-height: 180%;
 }
 
@@ -89,7 +153,7 @@ a svg {
 }
 
 .link {
-    color: #333;
+    color: var(--link-color);
     display: flex;
     align-items: center;
 }
@@ -102,8 +166,12 @@ a svg {
     font-size: 0.9rem;
 }
 
+.footer p {
+    color: var(--text-color);
+}
+
 .footer a {
-    color: #121112;
+    color: var(--link-color);
 }
 
 .cursor {
@@ -113,7 +181,7 @@ a svg {
     width: 24px;
     height: 24px;
     border-radius: 24px;
-    background-color: black;
+    background-color: var(--cursor-color);
     transition: all 300ms ease-out, transform 300ms ease-out 500ms;
     pointer-events: none;
 }
