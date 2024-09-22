@@ -1,0 +1,119 @@
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap");
+
+@import url("https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow-x: hidden;
+    font-family: "Work Sans", sans-serif;
+}
+
+a {
+    text-decoration: none;
+}
+
+html {
+    background: #fff;
+}
+
+body {
+    padding: 0 16px;
+}
+
+.container {
+    max-width: 990px;
+    margin: auto;
+}
+
+nav {
+    padding: 26px 0;
+}
+
+.logo {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #121112;
+    font-weight: 500;
+}
+
+.hero {
+    margin: 48px 0;
+}
+
+.hero_text_p,
+h1 {
+    color: #333;
+}
+
+h1 {
+    font-size: 2.25rem;
+    font-family: "Playfair Display", serif;
+    font-weight: 500;
+}
+
+.hero_text_p {
+    margin: 20px 0;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 180%;
+}
+
+.my_link a {
+    font-size: 0.8rem;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    padding: 6px 0;
+}
+
+a svg {
+    width: 20px;
+    height: 20px;
+    fill: #ccc;
+    flex-shrink: 0;
+}
+
+.w-6 {
+    stroke: #ccc;
+    fill: none;
+}
+
+.my_link {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    column-gap: 12px;
+    row-gap: 1px;
+}
+
+.link {
+    color: #333;
+    display: flex;
+    align-items: center;
+}
+
+.footer {
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 0.9rem;
+}
+
+.footer a {
+    color: #121112;
+}
+
+.cursor {
+    position: absolute;
+    top: -24px;
+    left: -24px;
+    width: 24px;
+    height: 24px;
+    border-radius: 24px;
+    background-color: black;
+    transition: all 300ms ease-out, transform 300ms ease-out 500ms;
+    pointer-events: none;
+}
